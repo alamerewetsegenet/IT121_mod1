@@ -1,0 +1,23 @@
+ <!DOCTYPE html>
+ <html>
+    <head>
+        <title>Calculate Date 12 Months from Now</title>
+    </head>
+    <body>
+        <h1>Date 12 Months from Now:</h1>
+        
+        <script>
+            // Get current date
+            var today = new Date();
+            
+            // Add 12 months to current date
+            var futureDate = new Date(today.getFullYear(), today.getMonth()+12, today.getDate());
+            
+            // Format date as string (e.g. "April 27, 2024")
+            var formattedDate = futureDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+            
+            // Write result to web page
+            document.write(formattedDate);
+        </script>
+    </body>
+    </html>
