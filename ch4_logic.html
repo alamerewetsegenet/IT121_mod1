@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+        <title>Week_4Assignments</title>      
+</head>
+    <body>
+        <h1>Rock Paper Scissors Game:</h1>
+    <script>
+    const myArr=["Rock", "Paper", "Scissors"];
+    let computer = Math.floor(Math.random() *3);
+    let player = Math.floor(Math.random() *3);
+    let message = "Player " + myArr[player] + " vs Computer " + myArr[computer] +   ":  ";
+
+   if (player === computer) {
+       message += "It is tie";
+   }else if (player > computer){
+   if (computer == 0 && player == 2) {
+       message += "Computer Wins";
+   }else{
+      message += "Player Wins";
+   }
+   } else{
+       if(computer == 2 && player == 0){
+       message += "Player Wins";
+   } else{
+   message += "Computer Wins";
+
+   }
+  }
+document.write(message);
+</script>
+
+<footer>
+    <ul>
+        <li>Copyright &copy;2023</li>
+        <li>All Rights Reserved</li>
+        <li><a href="../index.php">Web Design by Etsegenet Alamerew</a></li>
+        <li><a id="html-checker" href="#">HTML Validation</a></li>
+        <li><a id="css-checker" href="#">CSS Validation</a></li>
+    </ul>
+        
+        <script>
+            //link of the html and css cheaker!
+                document.getElementById("html-checker").setAttribute("href","https://validator.w3.org/nu/?doc=" + location.href);
+                document.getElementById("css-checker").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+        </script>
+</footer>
+<style>
+    body{
+        background-color:white;
+    }
+    h1{
+        color: brown;
+    } 
+    footer {
+    height: 60px;
+    line-height: 60px;
+    background-color: #ddd;
+    clear: both;
+    }
+    footer ul {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+    }
+
+    footer li {
+        justify-content: center;
+        margin: 0 15px;
+    }
+</style>
+</body>
+    </html>
