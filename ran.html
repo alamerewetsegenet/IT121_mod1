@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>Week_7Assignment!</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="viewport" content="width=device-width" />
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="css/portal.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+ </head>
+ <body>
+     <header>
+     <nav class="topnav" id="myTopnav">
+       <a href="index.html" class="active">Home</a>
+       <a href="http://w3schools.com" target="_blank">W3 Schools</a>
+       <a href="https://www.linkedin.com/learning/" target="_blank">LinkedIn Learning</a>
+       <a href="fp/index.html">Project</a>
+       <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+     </nav>
+     <style type="text/css">
+        img {
+        max-width: 50%;
+        max-height: 50%;
+        
+        }
+        main div {
+        width: 100%;
+        height: 80%;
+        text-align: center;
+        }
+        #button{
+            text-align: center;
+            height: 30px;
+        }
+        h1 {
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+     </style>
+     </header>
+     
+     <h1>Ethiopian Flag and Random Image!</h1>
+    
+     <main>
+        <div> <img src="" id="randomimg" onclick="choosePic()"> </div>
+        <button onclick="resetTable()">Reset</button>
+
+     </main>
+<script>
+    var images =["images/flag.jpg", "images/flag2.jpg", "images/gishen.jpg", "images/lalibela.jpg", "images/lalibela2.jpg", "images/gishen2.jpg"];
+    var randomNum = Math.floor(Math.random() * images.length);
+    document.getElementById("randomimg").src = images[randomNum];
+    document.getElementById("randomimg")
+      
+    function choosePic() {
+    var randomNum = Math.floor(Math.random() * images.length);
+    document.getElementById("randomimg").src = images[randomNum];
+    
+      }
+      function resetTable() {
+    var imgs = document.querySelectorAll('img');
+    imgs[0].src = 'images/flag.jpg'; 
+}
+</script>
+
+   <footer>
+    <ul>
+        <li>Copyright &copy;2023</li>
+        <li>All Rights Reserved</li>
+        <li><a href="../index.php">Web Design by Etsegenet Alamerew</a></li>
+        <li><a id="html-checker" href="#">HTML Validation</a></li>
+        <li><a id="css-checker" href="#">CSS Validation</a></li>
+    </ul>
+        
+        <script>
+            //link of the html and css cheaker!
+                document.getElementById("html-checker").setAttribute("href","https://validator.w3.org/nu/?doc=" + location.href);
+                document.getElementById("css-checker").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+        </script>
+</footer>
+</body>
+</html>
