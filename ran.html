@@ -18,30 +18,34 @@
        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
      </nav>
      <style type="text/css">
-        img {
-        max-width: 50%;
-        max-height: 50%;
         
-        }
-        main div {
-        width: 100%;
-        height: 80%;
-        text-align: center;
-        }
-        #button{
-            text-align: center;
-            height: 30px;
-        }
         h1 {
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 8px;
+        }
+        .row::after{
+            content: "";
+            clear: both;
+            display: table;
         }
      </style>
      </header>
      
-     <h1>Ethiopian Flag and Random Image!</h1>
+     <h1>Ethiopian Flag and Random Images!</h1>
     
      <main>
-        <div> <img src="" id="randomimg" onclick="choosePic()"> </div>
+        <div class="row">
+            <div class="column">
+        <img src="" id="randomimg" onclick="choosePic()" style="width:100%"> 
+        </div>
+        <div class="column">
+        <img src="images/flag2.jpg" onclick="choosePic()" style="width: 100%;"/>
+        </div>
+        </div>
         <button onclick="resetTable()">Reset</button>
 
      </main>
