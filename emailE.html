@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>Week_9Assignments</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="viewport" content="width=device-width" />
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="css/portal.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+ </head>
+ <body>
+     <header>
+     <h1>Email Extractor</h1>
+     <nav class="topnav" id="myTopnav">
+       <a href="index.html" class="active">Home</a>
+       <a href="http://w3schools.com" target="_blank">W3 Schools</a>
+       <a href="https://www.linkedin.com/learning/" target="_blank">LinkedIn Learning</a>
+       <a href="homew.html">Assignments</a>
+       <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+     </nav>
+     </header>
+     <style>
+        textarea{
+            margin-left: 150px;
+            margin-top: 70px;
+            border: 2px solid green; 
+            margin-top: 10px;  
+        }
+        button{
+            margin-left: 40px;
+            border: 2px solid green;
+            border-radius: 10px;    
+        }
+        label{
+            margin-top: 20px;  
+            margin-left: 150px;
+            font-size: large;
+        }
+     </style>
+<body>
+<div>
+    <label for="textarea">Add Text Content Here</label>
+</div>
+
+    <textarea id="txt1" name="txtarea" cols="50" rows="3"></textarea>
+    <button id="btn">Get Emails</button>
+    <textarea id="txt2" name="txtarea2" cols="50" rows="3"></textarea>
+    <script>
+        //selecting elements as objects in js
+        const t1 = document.querySelector('#txt1')
+        const t2 = document.querySelector('#txt2')
+        const btn = document.querySelector('#btn')
+        //adding event listener
+        btn.addEventListener('click', (e) => {
+            //setting text area 1 value to t1value variable
+            let t1value = t1.value;
+            //extracting valid emails using regular expression(regex) and match() function
+            holder = t1value.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/g)
+            //creating empty array for unique email ids
+            unique_emails = []
+            //runnning loop to find unique email ids from the data collected from text area 1
+            for (email of holder) {
+                if (unique_emails.includes(email)) {}
+                else unique_emails.push(email)
+            }
+            //creating final string uing join() function
+            let final_string = unique_emails.join(',')
+            //setting text area 2 value as the final string
+            t2.value = final_string
+        })
+    </script>
+     <footer>
+        <ul>
+            <li>Copyright &copy;2023</li>
+            <li>All Rights Reserved</li>
+            <li><a href="../index.php">Web Design by Etsegenet Alamerew</a></li>
+            <li><a id="html-checker" href="#">HTML Validation</a></li>
+            <li><a id="css-checker" href="#">CSS Validation</a></li>
+        </ul>
+            
+            <script>
+                //link of the html and css cheaker!
+                    document.getElementById("html-checker").setAttribute("href","https://validator.w3.org/nu/?doc=" + location.href);
+                    document.getElementById("css-checker").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+            </script>
+    </footer>
+</body>
+</html>
