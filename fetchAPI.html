@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>Etsegenet Alamerew's IT121 javascript</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="viewport" content="width=device-width" />
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="css/portal.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+ </head>
+ <body>
+     <header>
+     <h1>Etsegenet's IT161 javaScript Page!</h1>
+     <nav class="topnav" id="myTopnav">
+       <a href="index.html" class="active">Home</a>
+       <a href="https://www.w3schools.com/" target="_blank">W3 Schools</a>
+       <a href="https://www.linkedin.com/learning/" target="_blank">LinkedIn Learning</a>
+       <a href="homew.html">Assignments</a>
+       <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+     </nav>
+    <title>Cat Facts Button</title>
+</head>
+<style>
+    p{
+        margin-left: 140px;
+    }
+    button{
+        margin-left: 140px;
+        margin-top: 20px;
+    }
+</style>
+<body>
+    <button onclick="showCatFact()">Get a Cat fact</button>
+
+    <p id="catfact"></p>
+    <script>
+        async function getCatFact() {
+           
+            const api_endpoint = "https://cat-fact.herokuapp.com/facts/random?amount=1"
+            const response = await fetch(api_endpoint);
+            const json_response = await response.json();
+         
+            console.log(json_response);
+            return json_response;
+        }
+
+        async function showCatFact() {
+            const catFactResponse = await getCatFact();
+            const paragraphTag = document.getElementById("catfact");
+            paragraphTag.innerText = catFactResponse.text;
+        }
+    </script>
+    <footer>
+        <ul>
+            <li>Copyright &copy;2023</li>
+            <li>All Rights Reserved</li>
+            <li><a href="../index.php">Web Design by Etsegenet Alamerew</a></li>
+            <li><a id="html-checker" href="#">HTML Validation</a></li>
+            <li><a id="css-checker" href="#">CSS Validation</a></li>
+        </ul>
+            
+            <script>
+                //link of the html and css cheaker!
+                    document.getElementById("html-checker").setAttribute("href","https://validator.w3.org/nu/?doc=" + location.href);
+                    document.getElementById("css-checker").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+            </script>
+    </footer>
+</body>
+</html>
